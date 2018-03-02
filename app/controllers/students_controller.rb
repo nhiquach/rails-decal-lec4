@@ -1,21 +1,21 @@
 class StudentsController < ApplicationController
 
   def new
-  	@student = Student.new
+    @student = Student.new
   end
 
   def create
-  	@student = Student.create(student_params)
-  	redirect_to students_path
+    @student = Student.create(student_params)
+    redirect_to students_path
   end
 
   def index
-  	@students = Student.all
+    @students = Student.all
   end
 
   private
 
   def student_params
-  	params.require(:student).permit(:name, :fav_color)
+    params.require(:student).permit(:name, :fav_color)
   end
 end
